@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace MagicDestroyers.Characters.Melee
 {
-    class Warrior
+    public class Warrior
     {
+        public int abilityPoints;
+        public string faction;
+        public int healthPoints;
+        public int level;
+        public string name;
     }
 }

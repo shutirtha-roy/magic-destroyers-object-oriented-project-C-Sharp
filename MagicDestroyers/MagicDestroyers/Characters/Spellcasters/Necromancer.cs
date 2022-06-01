@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace MagicDestroyers.Characters.Spellcasters
 {
-    class Necromancer
+    public class Necromancer
     {
+        public int abilityPoints;
+        public string faction;
+        public int healthPoints;
+        public int level;
+        public string name;
     }
 }
