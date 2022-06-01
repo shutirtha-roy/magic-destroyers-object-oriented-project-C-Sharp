@@ -13,5 +13,18 @@ namespace MagicDestroyers.Characters.Spellcasters
         public int healthPoints;
         public int level;
         public string name;
+
+        public void ArcaneWealth()
+        {
+
+        }
+        public void Firewall()
+        {
+
+        }
+        public void Meditation()
+        {
+
+        }
     }
 }

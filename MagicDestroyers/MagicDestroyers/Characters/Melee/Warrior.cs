@@ -13,5 +13,19 @@ namespace MagicDestroyers.Characters.Melee
         public int healthPoints;
         public int level;
         public string name;
+
+        public void Strike()
+        {
+
+        }
+        public void Execute()
+        {
+
+        }
+        public void SkinHarden()
+        {
+
+        }
+        
     }
 }

@@ -13,5 +13,18 @@ namespace MagicDestroyers.Characters.Melee
         public int healthPoints;
         public int level;
         public string name;
+
+        public void HolyBlow()
+        {
+
+        }
+        public void PurifySoul()
+        {
+
+        }
+        public void RighteousWings()
+        {
+
+        }
     }
 }

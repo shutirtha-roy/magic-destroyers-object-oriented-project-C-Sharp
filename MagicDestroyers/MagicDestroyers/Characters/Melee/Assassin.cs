@@ -13,5 +13,18 @@ namespace MagicDestroyers.Characters.Melee
         public int healthPoints;
         public int level;
         public string name;
+
+        public void Raze()
+        {
+
+        }
+        public void BleedToDeath()
+        {
+
+        }
+        public void Survival()
+        {
+
+        }
     }
 }
