@@ -8,5 +8,11 @@ namespace MagicDestroyers.Equipment.Weapons
 {
     public class Sword
     {
+        int damage;
+
+        public void Bloogthrist()
+        {
+
+        }
     }
 }

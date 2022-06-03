@@ -8,5 +8,11 @@ namespace MagicDestroyers.Equipment.Weapons
 {
     public class Hammer
     {
+        int damage;
+
+        public void Stun()
+        {
+
+        }
     }
 }

@@ -8,5 +8,11 @@ namespace MagicDestroyers.Equipment.Weapons
 {
     public class Staff
     {
+        int damage;
+
+        public void Axe()
+        {
+
+        }
     }
 }
