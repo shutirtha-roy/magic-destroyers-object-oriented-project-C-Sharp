@@ -10,13 +10,18 @@ namespace MagicDestroyers.Characters.Spellcasters
 {
     public class Mage
     {
-        public int abilityPoints;
-        public string faction;
-        public int healthPoints;
-        public int level;
-        public string name;
-        public ClothRobe bodyArmor;
-        public Staff weapon;
+        private int abilityPoints;
+        private string faction;
+        private int healthPoints;
+        private int level;
+        private string name;
+        private ClothRobe bodyArmor;
+        private Staff weapon;
+
+        public Mage()
+        {
+
+        }
 
         public void ArcaneWealth()
         {

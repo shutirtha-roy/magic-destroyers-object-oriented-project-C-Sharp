@@ -10,13 +10,18 @@ namespace MagicDestroyers.Characters.Spellcasters
 {
     public class Necromancer
     {
-        public int abilityPoints;
-        public string faction;
-        public int healthPoints;
-        public int level;
-        public string name;
-        public LightLeatherVest bodyArmor;
-        public Sword weapon;
+        private int abilityPoints;
+        private string faction;
+        private int healthPoints;
+        private int level;
+        private string name;
+        private LightLeatherVest bodyArmor;
+        private Sword weapon;
+
+        public Necromancer()
+        {
+
+        }
 
         public void ShadowRage()
         {

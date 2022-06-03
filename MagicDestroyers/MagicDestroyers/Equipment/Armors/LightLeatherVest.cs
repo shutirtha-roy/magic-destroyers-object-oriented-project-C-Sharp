@@ -8,6 +8,11 @@ namespace MagicDestroyers.Equipment.Armors
 {
     public class LightLeatherVest
     {
-        int armorPoints;
+        private int armorPoints;
+
+        public LightLeatherVest()
+        {
+
+        }
     }
 }

@@ -10,14 +10,18 @@ namespace MagicDestroyers.Characters.Melee
 {
     public class Warrior
     {
-        public int abilityPoints;
-        public string faction;
-        public int healthPoints;
-        public int level;
-        public string name;
-        public ChainLink bodyArmor;
-        public Axe weapon;
+        private int abilityPoints;
+        private string faction;
+        private int healthPoints;
+        private int level;
+        private string name;
+        private ChainLink bodyArmor;
+        private Axe weapon;
 
+        public Warrior()
+        {
+
+        }
         public void Strike()
         {
 

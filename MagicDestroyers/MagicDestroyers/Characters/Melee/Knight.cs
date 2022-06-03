@@ -10,13 +10,18 @@ namespace MagicDestroyers.Characters.Melee
 {
     public class Knight
     {
-        public int abilityPoints;
-        public string faction;
-        public int healthPoints;
-        public int level;
-        public string name;
-        public ChainLink bodyArmor;
-        public Hammer weapon;
+        private int abilityPoints;
+        private string faction;
+        private int healthPoints;
+        private int level;
+        private string name;
+        private ChainLink bodyArmor;
+        private Hammer weapon;
+
+        public Knight()
+        {
+
+        }
 
         public void HolyBlow()
         {

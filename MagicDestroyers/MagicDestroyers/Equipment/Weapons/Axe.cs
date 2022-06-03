@@ -8,7 +8,7 @@ namespace MagicDestroyers.Equipment.Weapons
 {
     public class Axe
     {
-        int damage;
+        private int damage;
 
         public void Empower()
         {
