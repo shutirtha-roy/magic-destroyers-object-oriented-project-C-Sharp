@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MagicDestroyers.Equipment.Armors;
+using MagicDestroyers.Equipment.Weapons;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,8 @@ namespace MagicDestroyers.Characters.Melee
         public int healthPoints;
         public int level;
         public string name;
+        public ChainLink bodyArmor;
+        public Axe weapon;
 
         public void Strike()
         {

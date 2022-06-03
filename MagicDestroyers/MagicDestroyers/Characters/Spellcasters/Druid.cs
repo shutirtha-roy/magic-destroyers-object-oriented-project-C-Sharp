@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MagicDestroyers.Equipment.Armors;
+using MagicDestroyers.Equipment.Weapons;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +14,9 @@ namespace MagicDestroyers.Characters.Spellcasters
         public string faction;
         public int healthPoints;
         public int level;
-        public string name; 
+        public string name;
+        public LightLeatherVest bodyArmor;
+        public Staff weapon;
 
         public void Moonfire()
         {
