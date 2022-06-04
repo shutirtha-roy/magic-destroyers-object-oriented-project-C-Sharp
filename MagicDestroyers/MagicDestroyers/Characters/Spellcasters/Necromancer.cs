@@ -17,6 +17,7 @@ namespace MagicDestroyers.Characters.Spellcasters
         private string name;
         private LightLeatherVest bodyArmor;
         private Sword weapon;
+
         public int AbilityPoints
         {
             get
@@ -25,13 +26,31 @@ namespace MagicDestroyers.Characters.Spellcasters
             }
             set
             {
-                if (value >= 1 && value <= 20)
+                if (value >= 1 && value <= 10)
                 {
                     abilityPoints = value;
                 }
                 else
                 {
                     throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+        public string Faction
+        {
+            get
+            {
+                return faction;
+            }
+            set
+            {
+                if (faction == "Melee" || faction == "SpellCasters")
+                {
+                    faction = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(String.Empty, "The faction should be Melee or SpellCasters");
                 }
             }
         }
@@ -43,7 +62,7 @@ namespace MagicDestroyers.Characters.Spellcasters
             }
             set
             {
-                if (value >= 0)
+                if (value >= 0 && value <= 70)
                 {
                     healthPoints = value;
                 }
@@ -61,7 +80,7 @@ namespace MagicDestroyers.Characters.Spellcasters
             }
             set
             {
-                if (value >= 0)
+                if (value >= 0 && value <= 16)
                 {
                     level = value;
                 }
@@ -69,6 +88,39 @@ namespace MagicDestroyers.Characters.Spellcasters
                 {
                     throw new ArgumentOutOfRangeException();
                 }
+            }
+        }
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        public LightLeatherVest BodyArmor
+        {
+            get
+            {
+                return bodyArmor;
+            }
+            set
+            {
+                bodyArmor = value;
+            }
+        }
+        public Sword Weapon
+        {
+            get
+            {
+                return weapon;
+            }
+            set
+            {
+                weapon = value;
             }
         }
         public Necromancer()

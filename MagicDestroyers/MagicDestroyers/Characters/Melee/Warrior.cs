@@ -25,13 +25,31 @@ namespace MagicDestroyers.Characters.Melee
             }
             set
             {
-                if (value >= 1 && value <= 10)
+                if (value >= 1 && value <= 60)
                 {
                     abilityPoints = value;
                 }
                 else
                 {
                     throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+        public string Faction
+        {
+            get
+            {
+                return faction;
+            }
+            set
+            {
+                if (faction == "Melee" || faction == "SpellCasters")
+                {
+                    faction = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(String.Empty, "The faction should be Melee or SpellCasters");
                 }
             }
         }
@@ -43,7 +61,7 @@ namespace MagicDestroyers.Characters.Melee
             }
             set
             {
-                if (value >= 0)
+                if (value >= 0 && value <= 60)
                 {
                     healthPoints = value;
                 }
@@ -61,7 +79,7 @@ namespace MagicDestroyers.Characters.Melee
             }
             set
             {
-                if (value >= 0)
+                if (value >= 0 && value <= 41)
                 {
                     level = value;
                 }
@@ -69,6 +87,39 @@ namespace MagicDestroyers.Characters.Melee
                 {
                     throw new ArgumentOutOfRangeException();
                 }
+            }
+        }
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        public ChainLink BodyArmor
+        {
+            get
+            {
+                return bodyArmor;
+            }
+            set
+            {
+                bodyArmor = value;
+            }
+        }
+        public Axe Weapon
+        {
+            get
+            {
+                return weapon;
+            }
+            set
+            {
+                weapon = value;
             }
         }
         public Warrior()
