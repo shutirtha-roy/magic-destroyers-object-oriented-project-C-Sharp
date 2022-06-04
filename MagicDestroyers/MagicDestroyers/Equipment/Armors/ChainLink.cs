@@ -9,6 +9,24 @@ namespace MagicDestroyers.Equipment.Armors
     public class ChainLink
     {
         private int armorPoints;
+        public int ArmorPoints
+        {
+            get
+            {
+                return armorPoints;
+            }
+            set
+            {
+                if(value >= 1)
+                {
+                    armorPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
 
         public ChainLink()
         {
