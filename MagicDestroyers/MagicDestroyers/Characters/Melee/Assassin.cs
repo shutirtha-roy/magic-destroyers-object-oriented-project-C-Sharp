@@ -18,6 +18,61 @@ namespace MagicDestroyers.Characters.Melee
         private LightLeatherVest bodyArmor;
         private Sword weapon;
 
+        public int AbilityPoints
+        {
+            get
+            {
+                return abilityPoints;
+            }
+            set
+            {
+                if(value >= 1 && value <= 10)
+                {
+                    abilityPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+        public int HealthPoints
+        {
+            get
+            {
+                return healthPoints;
+            }
+            set
+            {
+                if (value >= 0)
+                {
+                    healthPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+        public int Level
+        {
+            get
+            {
+                return level;
+            }
+            set
+            {
+                if (value >= 0)
+                {
+                    level = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+
         public Assassin()
         {
 

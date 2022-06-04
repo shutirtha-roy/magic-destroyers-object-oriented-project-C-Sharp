@@ -17,7 +17,60 @@ namespace MagicDestroyers.Characters.Spellcasters
         private string name;
         private LightLeatherVest bodyArmor;
         private Sword weapon;
-
+        public int AbilityPoints
+        {
+            get
+            {
+                return abilityPoints;
+            }
+            set
+            {
+                if (value >= 1 && value <= 20)
+                {
+                    abilityPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+        public int HealthPoints
+        {
+            get
+            {
+                return healthPoints;
+            }
+            set
+            {
+                if (value >= 0)
+                {
+                    healthPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+        public int Level
+        {
+            get
+            {
+                return level;
+            }
+            set
+            {
+                if (value >= 0)
+                {
+                    level = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
         public Necromancer()
         {
 
