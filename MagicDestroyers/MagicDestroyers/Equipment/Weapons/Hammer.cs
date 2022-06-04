@@ -9,6 +9,24 @@ namespace MagicDestroyers.Equipment.Weapons
     public class Hammer
     {
         private int damage;
+        public int Damage
+        {
+            get
+            {
+                return damage;
+            }
+            set
+            {
+                if (value >= 1)
+                {
+                    damage = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
 
         public void Stun()
         {
