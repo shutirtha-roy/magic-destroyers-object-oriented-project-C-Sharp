@@ -10,13 +10,61 @@ namespace MagicDestroyers.Characters.Melee
 {
     public class Warrior
     {
+        private string name;
+        private int level;
+        private int healthPoints;
         private int abilityPoints;
         private string faction;
-        private int healthPoints;
-        private int level;
-        private string name;
         private ChainLink bodyArmor;
         private Axe weapon;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        public int Level
+        {
+            get
+            {
+                return level;
+            }
+            set
+            {
+                if (value >= 0 && value <= 41)
+                {
+                    level = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+        public int HealthPoints
+        {
+            get
+            {
+                return healthPoints;
+            }
+            set
+            {
+                if (value >= 0 && value <= 60)
+                {
+                    healthPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
         public int AbilityPoints
         {
             get
@@ -53,53 +101,6 @@ namespace MagicDestroyers.Characters.Melee
                 }
             }
         }
-        public int HealthPoints
-        {
-            get
-            {
-                return healthPoints;
-            }
-            set
-            {
-                if (value >= 0 && value <= 60)
-                {
-                    healthPoints = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-        }
-        public int Level
-        {
-            get
-            {
-                return level;
-            }
-            set
-            {
-                if (value >= 0 && value <= 41)
-                {
-                    level = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-        }
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-        }
         public ChainLink BodyArmor
         {
             get
@@ -122,10 +123,29 @@ namespace MagicDestroyers.Characters.Melee
                 weapon = value;
             }
         }
+
         public Warrior()
+            : this("Naoshin", 1)
         {
 
         }
+        public Warrior(string name, int level)
+            : this(name, level, 50)
+        {
+
+        }
+
+        public Warrior(string name, int level, int healthPoints)
+        {
+            this.Name = name;
+            this.Level = level;
+            this.HealthPoints = healthPoints;
+            this.AbilityPoints = 45;
+            this.Faction = "Melee";
+            this.BodyArmor = new ChainLink();
+            this.Weapon = new Axe();
+        }
+
         public void Strike()
         {
 
