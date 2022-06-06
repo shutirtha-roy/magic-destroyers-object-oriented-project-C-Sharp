@@ -10,14 +10,61 @@ namespace MagicDestroyers.Characters.Spellcasters
 {
     public class Druid
     {
+        private string name;
+        private int level;
+        private int healthPoints;
         private int abilityPoints;
         private string faction;
-        private int healthPoints;
-        private int level;
-        private string name;
         private LightLeatherVest bodyArmor;
         private Staff weapon;
 
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        public int Level
+        {
+            get
+            {
+                return level;
+            }
+            set
+            {
+                if (value >= 0 && value <= 21)
+                {
+                    level = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+        public int HealthPoints
+        {
+            get
+            {
+                return healthPoints;
+            }
+            set
+            {
+                if (value >= 0 && value <= 20)
+                {
+                    healthPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
         public int AbilityPoints
         {
             get
@@ -54,53 +101,6 @@ namespace MagicDestroyers.Characters.Spellcasters
                 }
             }
         }
-        public int HealthPoints
-        {
-            get
-            {
-                return healthPoints;
-            }
-            set
-            {
-                if (value >= 0 && value <= 20)
-                {
-                    healthPoints = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-        }
-        public int Level
-        {
-            get
-            {
-                return level;
-            }
-            set
-            {
-                if (value >= 0 && value <= 21)
-                {
-                    level = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-        }
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-        }
         public LightLeatherVest BodyArmor
         {
             get
@@ -123,9 +123,26 @@ namespace MagicDestroyers.Characters.Spellcasters
                 weapon = value;
             }
         }
+
         public Druid()
+            : this("Farhan", 1)
         {
 
+        }
+        public Druid(string name, int level)
+            : this(name, level, 12)
+        {
+
+        }
+        public Druid(string name, int level, int healthPoints)
+        {
+            this.Name = name;
+            this.Level = level;
+            this.HealthPoints = healthPoints;
+            this.AbilityPoints = 17;
+            this.Faction = "Spellcasters";
+            this.BodyArmor = new LightLeatherVest();
+            this.Weapon = new Staff();
         }
         public void Moonfire()
         {

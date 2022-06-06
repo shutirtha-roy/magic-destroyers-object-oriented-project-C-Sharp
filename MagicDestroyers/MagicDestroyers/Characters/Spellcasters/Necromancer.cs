@@ -10,14 +10,61 @@ namespace MagicDestroyers.Characters.Spellcasters
 {
     public class Necromancer
     {
+        private string name;
+        private int level;
+        private int healthPoints;
         private int abilityPoints;
         private string faction;
-        private int healthPoints;
-        private int level;
-        private string name;
         private LightLeatherVest bodyArmor;
         private Sword weapon;
 
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        public int Level
+        {
+            get
+            {
+                return level;
+            }
+            set
+            {
+                if (value >= 0 && value <= 16)
+                {
+                    level = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+        public int HealthPoints
+        {
+            get
+            {
+                return healthPoints;
+            }
+            set
+            {
+                if (value >= 0 && value <= 70)
+                {
+                    healthPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
         public int AbilityPoints
         {
             get
@@ -54,53 +101,6 @@ namespace MagicDestroyers.Characters.Spellcasters
                 }
             }
         }
-        public int HealthPoints
-        {
-            get
-            {
-                return healthPoints;
-            }
-            set
-            {
-                if (value >= 0 && value <= 70)
-                {
-                    healthPoints = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-        }
-        public int Level
-        {
-            get
-            {
-                return level;
-            }
-            set
-            {
-                if (value >= 0 && value <= 16)
-                {
-                    level = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-        }
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-        }
         public LightLeatherVest BodyArmor
         {
             get
@@ -124,9 +124,25 @@ namespace MagicDestroyers.Characters.Spellcasters
             }
         }
         public Necromancer()
+            : this("Abrar", 1)
         {
 
         }
+        public Necromancer(string name, int level)
+            : this("Sefat", 1, 65)
+        {
+        }
+        public Necromancer(string name, int level, int healthPoints)
+        {
+            this.Name = name;
+            this.Level = level;
+            this.HealthPoints = healthPoints;
+            this.AbilityPoints = 5;
+            this.Faction = "Spellcasters";
+            this.bodyArmor = new LightLeatherVest();
+            this.weapon = new Sword();
+        }
+
 
         public void ShadowRage()
         {

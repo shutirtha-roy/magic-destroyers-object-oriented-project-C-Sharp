@@ -10,14 +10,61 @@ namespace MagicDestroyers.Characters.Spellcasters
 {
     public class Mage
     {
+        private string name;
+        private int level;
+        private int healthPoints;
         private int abilityPoints;
         private string faction;
-        private int healthPoints;
-        private int level;
-        private string name;
         private ClothRobe bodyArmor;
         private Staff weapon;
 
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        public int Level
+        {
+            get
+            {
+                return level;
+            }
+            set
+            {
+                if (value >= 0 && value <= 26)
+                {
+                    level = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
+        public int HealthPoints
+        {
+            get
+            {
+                return healthPoints;
+            }
+            set
+            {
+                if (value >= 0 && value <= 34)
+                {
+                    healthPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+        }
         public int AbilityPoints
         {
             get
@@ -54,53 +101,6 @@ namespace MagicDestroyers.Characters.Spellcasters
                 }
             }
         }
-        public int HealthPoints
-        {
-            get
-            {
-                return healthPoints;
-            }
-            set
-            {
-                if (value >= 0 && value <= 34)
-                {
-                    healthPoints = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-        }
-        public int Level
-        {
-            get
-            {
-                return level;
-            }
-            set
-            {
-                if (value >= 0 && value <= 26)
-                {
-                    level = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-            }
-        }
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-        }
         public ClothRobe BodyArmor
         {
             get
@@ -124,8 +124,24 @@ namespace MagicDestroyers.Characters.Spellcasters
             }
         }
         public Mage()
+            : this("Junayed", 1)
         {
 
+        }
+        public Mage(string name, int level)
+            : this(name, level, 11)
+        {
+            
+        }
+        public Mage(string name, int level, int healthPoints)
+        {
+            this.Name = name;
+            this.Level = level;
+            this.HealthPoints = healthPoints;
+            this.AbilityPoints = 25;
+            this.Faction = "Spellcasters";
+            this.BodyArmor = new ClothRobe();
+            this.Weapon = new Staff();
         }
 
         public void ArcaneWealth()
